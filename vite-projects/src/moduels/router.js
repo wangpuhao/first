@@ -1,0 +1,47 @@
+import{createRouter,createWebHistory} from 'vue-router'
+const router=createRouter({
+    routes:[
+        //登录
+        {
+            path:'/',
+            name:'login',
+            component:()=>import("../pages/login.vue")
+        },
+        //注册
+        {
+            path:'/register',
+            name:'register',
+            component:()=>import("../pages/register.vue")
+        },
+        {
+            path:'/resetpassword',
+            name:'resetpassword',
+            component:()=>import("../pages/resetpassword.vue")
+        },
+        //菜品
+        {
+            path:'/home',
+            name:'home',
+            component:()=>import("../pages/home.vue")
+        },
+        {
+            path:'/dish',
+            name:'dish',
+            component:()=>import("../pages/dish.vue")
+        },       
+        //购物车
+        {
+            path:'/user/cart',
+            name:'cart',
+            component:()=>import("../pages/user/cart.vue")
+        },
+        //订单
+        {
+            path:'/user/orders',
+            name:'orders',
+            component:()=>import("../pages/user/orders.vue")
+        }
+    ],
+    history:createWebHistory()
+})
+export default router
